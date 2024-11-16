@@ -49,10 +49,19 @@
 </head>
 <body>
     
-    <h1>Bienvenido a Laravel</h1>
+    <h1>Bienvenido a DaiStore</h1>
 
-  <a href="{{ route('auth.login') }}" class="btn btn-primary">Login</a>
+    <!-- Botón para ir al índice de usuarios -->
+    <a href="{{ route('index') }}" class="btn btn-primary">Usuarios</a>
 
+    <!-- Botón para ir al índice de productos -->
+    <a href="{{ route('productos.index') }}" class="btn btn-primary">Productos</a>
+
+    <!-- Botón para ir al índice de pedidos -->
+    <a href="{{ route('pedidos.index') }}" class="btn btn-primary">Pedidos</a>
     
+    <a href="{{ route('home') }}" class="btn btn-primary">cerrar</a>
+
+
 </body>
 </html>

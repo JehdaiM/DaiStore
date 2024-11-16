@@ -5,10 +5,13 @@ use App\Http\Controllers\Users;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\AuthController;
+use App\Http\Middleware\isAuthenticated;
 
 
 
 Route::get('/', [Users::class, 'welcome'])->name('index');  
+Route::get('/wel', [Users::class, 'wel'])->name('wel');  
+
 Route::get('/index', [Users::class, 'index'])->name('index'); 
 Route::get('/create', [Users::class, 'create'])->name('create'); 
 Route::post('/', [Users::class, 'store'])->name('store'); 
@@ -35,3 +38,17 @@ Route::get('/pedidos/{id}', [PedidoController::class, 'show'])->name('pedidos.sh
 Route::get('/pedidos/{id}/edit', [PedidoController::class, 'edit'])->name('pedidos.edit'); // Corrige esta línea
 Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.update');
 Route::delete('/pedidos/{id}', [PedidoController::class, 'destroy'])->name('pedidos.destroy');
+
+Route::middleware("guest")->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::get('/registro', [AuthController::class, 'registro'])->name('registro');
+    Route::post('/registrar', [AuthController::class, 'registrar'])->name('registrar');
+    Route::post('/logear', [AuthController::class, 'logear'])->name('logear');
+     
+});
+
+Route::middleware("auth")->group(function () {
+    Route::get('/home', [AuthController::class, 'home'])->name('home');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+         
+});

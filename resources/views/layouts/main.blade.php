@@ -1,7 +1,7 @@
 <!-- resources/views/layouts/main.blade.php -->
 
 <!doctype html>
-<html lang="en">
+<html lang="eS">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <title>@yield('title', 'CRUDUsers')</title> <!-- Título dinámico para cada vista -->
+    <title>@yield('title', 'DaiStore CRUD')</title> <!-- Título dinámico para cada vista -->
 </head>
 <body>
 

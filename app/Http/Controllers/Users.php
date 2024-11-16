@@ -11,6 +11,11 @@ class Users extends Controller
         return view('welcome');
     }
 
+    public function wel()
+    {
+        return view('wel');
+    }
+
     public function index()
     {
         $items = User::paginate(4);
